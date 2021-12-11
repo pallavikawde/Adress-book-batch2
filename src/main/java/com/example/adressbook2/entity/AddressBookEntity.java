@@ -1,4 +1,4 @@
-package com.bridgelabz.addressbook2.entity;
+package com.example.adressbook2.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

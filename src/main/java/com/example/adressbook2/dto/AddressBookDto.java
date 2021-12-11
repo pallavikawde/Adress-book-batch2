@@ -14,7 +14,7 @@ public class AddressBookDto {
     private String state;
     private String phoneNumber;
     private int zip;
-    @CreationTimestamp
-    private LocalDateTime createdOn;
+//    @CreationTimestamp
+//    private LocalDateTime createdOn;
 
 }
