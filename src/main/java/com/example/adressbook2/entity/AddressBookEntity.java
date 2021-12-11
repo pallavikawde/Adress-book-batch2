@@ -1,4 +1,4 @@
-package com.example.adressbook2.entity;
+package com.bridgelabz.addressbook2.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +17,7 @@ public class AddressBookEntity {
     @Id
     @Column(name = "address_id")
     private int id;
-    @Column(name = "name")
+    @Column(name = "name1")
     private String name;
     @Column(name = "address")
     private String address;

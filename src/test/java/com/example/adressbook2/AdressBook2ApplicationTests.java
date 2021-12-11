@@ -1,4 +1,4 @@
-package com.example.adressbook2;
+package com.bridgelabz.addressbook2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
