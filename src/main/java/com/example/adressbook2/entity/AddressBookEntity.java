@@ -9,12 +9,12 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name ="AddressBook")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressBookEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "address_id")
     private int id;
     @Column(name = "name")
@@ -29,8 +29,5 @@ public class AddressBookEntity {
     private String phoneNumber;
     @Column(name = "zip")
     private int zip;
-    @CreationTimestamp
-    @Column(name = "created_on")
-    private LocalDateTime createdOn;
 
 }

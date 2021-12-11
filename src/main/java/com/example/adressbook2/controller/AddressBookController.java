@@ -1,5 +1,6 @@
 package com.example.adressbook2.controller;
 
+import com.example.adressbook2.dto.AddressBookDto;
 import com.example.adressbook2.entity.AddressBookEntity;
 import com.example.adressbook2.service.AddressBookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class AddressBookController {
     private AddressBookService addressBookService;
 
     @GetMapping("/list-of-all-books")
-    public List<AddressBookEntity>etListOfAddressBook(){
+    public List<AddressBookDto>etListOfAddressBook(){
         return addressBookService.getAllList();
 
     }
