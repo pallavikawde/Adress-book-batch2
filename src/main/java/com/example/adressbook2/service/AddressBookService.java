@@ -30,7 +30,7 @@ public class AddressBookService {
     private ModelMapper mapper;
 
         public String addDetails(AddressBookDto addressBookDto){
-            if(addressBookDto.getName().isEmpty()||addressBookDto.getName().length()==0){
+            if(addressBookDto.getFirstName().isEmpty()||addressBookDto.getFirstName().length()==0){
                 throw new EmptyInputException("601","please check");
 
             }

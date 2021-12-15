@@ -15,19 +15,30 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class AddressBookEntity {
     @Id
-    @Column(name = "address_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ADDRESS_ID")
     private int id;
-    @Column(name = "name1")
-    private String name;
-    @Column(name = "address")
+
+    @Column(name = "FIRST_NAME")
+    private String firstName;
+
+    @Column(name = "LAST_NAME")
+    private String lastName;
+
+    @Column(name = "ADDRESS")
     private String address;
-    @Column(name = "city")
+
+    @Column(name = "CITY")
     private String city;
-    @Column(name = "state")
+
+    @Column(name = "STATE")
     private String state;
-    @Column(name = "phone_number")
+
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
-    @Column(name = "zip")
-    private int zip;
+
+    @Column(name = "ZIP_CODE")
+    private String zipCode;
 
 }
+

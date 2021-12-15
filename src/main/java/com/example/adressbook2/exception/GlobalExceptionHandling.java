@@ -13,6 +13,7 @@ import java.util.NoSuchElementException;
 
 @ControllerAdvice
 public class GlobalExceptionHandling extends ResponseEntityExceptionHandler {
+
     @ExceptionHandler(EmptyInputException.class)
     public ResponseEntity<String> handleEmptyInput(EmptyInputException emptyInputException) {
         return new ResponseEntity<String>("input fields are empty,please look into it", HttpStatus.NOT_FOUND);
