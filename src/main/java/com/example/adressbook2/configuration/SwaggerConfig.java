@@ -19,7 +19,7 @@
 //        public Docket api() {
 //            return new Docket(DocumentationType.SWAGGER_2)
 //                    .select()
-//                    .apis((Predicate<RequestHandler>) RequestHandlerSelectors.basePackage("com.example.adressbook2"))
+//                    .apis((Predicate<RequestHandler>) RequestHandlerSelectors.basePackage("com.example.adressbook2.controller"))
 //                    .paths((Predicate<String>) PathSelectors.any())
 //                    .build()
 //                    .apiInfo(metadata());

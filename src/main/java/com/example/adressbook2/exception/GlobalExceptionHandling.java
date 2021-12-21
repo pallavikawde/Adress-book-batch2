@@ -1,5 +1,6 @@
 package com.example.adressbook2.exception;//package com.example.adressbook2.exception;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,10 +25,12 @@ public class GlobalExceptionHandling extends ResponseEntityExceptionHandler {
         return new ResponseEntity<String>("no value is present in DB,please change your request", HttpStatus.NOT_FOUND);
 
     }
-
+    @ExceptionHandler(EmptyResultDataAccessException.class)
+    public ResponseEntity<String> handleNoSuchElementException(EmptyResultDataAccessException emptyResultDataAccessException) {
+        return new ResponseEntity<String>("no value is present in DB,please change your request", HttpStatus.NOT_FOUND);
+    }
     @Override
     protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-       // return super.handleHttpRequestMethodNotSupported(ex, headers, status, request);
         return new ResponseEntity<Object>("please change http methode type ", HttpStatus.NOT_FOUND);
 
     }

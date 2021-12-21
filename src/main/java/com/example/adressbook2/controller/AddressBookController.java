@@ -1,8 +1,10 @@
 package com.example.adressbook2.controller;
 
+import com.example.adressbook2.configuration2.MessagingConfig;
 import com.example.adressbook2.dto.AddressBookDto;
 import com.example.adressbook2.entity.AddressBookEntity;
 import com.example.adressbook2.service.AddressBookService;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -19,9 +21,12 @@ public class AddressBookController {
 
     @Autowired
     private AddressBookService addressBookService;
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
 
    @GetMapping("/listOf-all-books")
    public List<AddressBookDto>getAllListOfBokks(){
+       rabbitTemplate.convertAndSend(MessagingConfig.EXCHANGE,MessagingConfig.ROUTING_KEY,addressBookService.getAllList());
        return addressBookService.getAllList();
    }
     @PostMapping(value="/add-detail")

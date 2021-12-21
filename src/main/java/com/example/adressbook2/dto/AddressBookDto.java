@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
@@ -14,12 +15,13 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class AddressBookDto {
-   private int id;
-    @Pattern(regexp = "^[A-Z][a-z]{2,}$", message = "First name is invalid!!!")
+
+   @Pattern(regexp = "^[A-Z][a-z]{2,}$")
     private String firstName;
 
-    @Pattern(regexp = "^[A-Z][a-z]{2,}$", message = "Last name is invalid!!!")
+    @Pattern(regexp = "^[A-Z][a-z]{2,}$")
     private String lastName;
 
     private String address;
@@ -28,11 +30,15 @@ public class AddressBookDto {
 
     private String state;
 
-    @Pattern(regexp = "^[91]{2}[ ][0-9]{10}$", message = "Phone number is invalid!!!")
+    @Pattern(regexp = "^[91]{2}[ ][0-9]{10}$")
     @Column(unique = true)
     private String phoneNumber;
 
-    @Size(max = 6, message = "Zipcode is invalid!!!")
+   @Size(max = 6)
     private String zipCode;
+//   private String OrderId;
+//    private String name;
+//    private String qty;
+//    private double price;
 }
 
